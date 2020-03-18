@@ -2,7 +2,7 @@
 version: "2"
 services:
   smokeping:
-    image: smokeping-speedtest
+    image: joaorua/smokeping-speedtest:latest
     container_name: smokeping-speedtest
     environment:
       - PUID=1000
