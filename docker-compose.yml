@@ -1,0 +1,16 @@
+---
+version: "2"
+services:
+  smokeping:
+    image: smokeping-speedtest
+    container_name: smokeping-speedtest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Lisbon
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - 8080:80
+    restart: unless-stopped
