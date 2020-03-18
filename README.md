@@ -6,6 +6,7 @@ Docker SmokePing with Speedtest
 * git clone https://github.com/joaorua/docker-smokeping-speedtest.git
 * cd docker-smokeping-speedtest/
 * docker-compose up # Use -d to daemon mode
+* Go to http://localhost:8080/smokeping/
 
 **Configuration Example**
 
