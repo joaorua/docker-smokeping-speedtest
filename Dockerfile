@@ -2,7 +2,9 @@ FROM linuxserver/smokeping
 MAINTAINER Joao Rua <joaorua@gmail.com>
 
 RUN apk add python3-dev openssl-dev py3-pip
-RUN pip3 install speedtest-cli
+#RUN pip3 install speedtest-cli
+RUN curl -L -s -S -o /usr/local/bin/speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py \
+    && chmod a+x /usr/local/bin/speedtest-cli
 #RUN wget https://raw.githubusercontent.com/sivel/speedtest-cli/v2.1.3/speedtest.py -O /usr/bin/speedtest-cli
 COPY mods/speedtest.pm /usr/share/perl5/vendor_perl/Smokeping/probes/speedtest.pm
 COPY mods/speedtestcli.pm /usr/share/perl5/vendor_perl/Smokeping/probes/speedtestcli.pm
